@@ -97,7 +97,7 @@ const RouteSelector = ({ allFlights, origin, destination }) => {
             <p className="big-number">01</p>
             <p className="thin-text">Select planet of departure</p>
           </div>
-          <div>{dropDownMenu("from")}</div>
+          <div style={{ zIndex: "1" }}>{dropDownMenu("from")}</div>
         </div>
         <div>
           <div className="flex-start mb">
