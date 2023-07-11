@@ -1,0 +1,54 @@
+.grid-flights {
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: #fffefa;
+    transition: 0.1s;
+
+}
+
+.grid-flights:hover{
+    transition: 0.1s;
+}
+
+.flight-list--hidden {
+    transform: scale(0);
+}
+
+.flight-list--visible {
+    transform: scale(1);
+}
+
+.to-cart {
+    transform-origin: top right;
+    transition: 0.5s;
+    transform: scale(0);
+}
+
+.more-info-visible {
+    color: #f4d35e;
+    transform: translateY(0);
+    transition: 0.5s;
+}
+
+.more-info-hidden {
+    color: #f4d35e;
+    transform: translateY(10rem);
+    transition: 0.5s;
+}
+
+.day {
+    align-self: center;
+    font-size: 3.3rem;
+}
+
+.month-year {
+    display: flex;
+    gap: 1rem;
+    color: #567694;
+    font-size: 1.4rem;
+}
+
+.time {
+    font-size: 3rem;
+}
+

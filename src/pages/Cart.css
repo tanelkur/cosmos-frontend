@@ -1,0 +1,73 @@
+.cart-grid {
+    justify-content: flex-start;
+    margin-bottom: 1rem
+}
+
+.reservation-card {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.reservation-form {
+    gap: 2rem;
+    padding: 2rem 0;
+    border-radius: 0.8rem;
+}
+
+.input {
+    outline: none !important;
+    max-width: 15rem;
+    height: 4rem;
+    border: 2px solid #869db3;
+    border-radius: 0.8rem;
+}
+
+.input:focus {
+    border: 2px solid #567694;
+}
+
+.input::-webkit-input-placeholder {
+    color: #869db3
+}
+
+.cart-item {
+    padding: 1rem 0.4rem;
+}
+
+.cart-column-info {
+    font-size: 1.4rem;
+}
+
+.cart-delete-icon {
+    cursor: pointer;
+    color: red;
+    font-size: 1.4rem;
+}
+
+.cart-delete-icon:hover {
+    color: rgb(185, 0, 0);
+}
+
+.cart-info-icon {
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.cart-hidden {
+    transform: scale(0);
+}
+
+.cart-visible {
+    transform: scale(1);
+}
+
+.google-box {
+    line-height: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 700px) {
+    .cart-column-info {
+        display: none;
+    }
+ }

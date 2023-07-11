@@ -1,0 +1,36 @@
+.customers {
+    font-size: 1.6rem;
+    font-weight: 300;
+    max-width: 40rem;
+}
+
+.customers-small-text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #869db3;
+    margin-left: 1rem;
+}
+
+.customers-text {
+    line-height: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #567694;
+    margin: 1rem 0;
+}
+
+.booked {
+    margin-bottom: 0.2rem;
+}
+
+.names {
+    border-bottom: 1px solid #e7ebf0;
+     padding-bottom: 0.4rem;
+}
+
+@media (max-width: 700px) {
+    .customers {
+        display: none;
+    }
+ }
+ 

@@ -1,0 +1,45 @@
+.company-icon{
+    cursor: pointer;
+    color: red;
+    font-size: 0.7rem;
+}
+
+.company-icon:hover{
+    color: rgb(185, 0, 0);
+}
+
+.company-select{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.company-link{
+    cursor: pointer;
+    border-bottom: #fff solid 1px;
+}
+
+.company-link:hover{
+    color: #567694;
+    border-bottom: #567694 solid 1px;
+}
+
+.active {
+    color: #567694;
+    border-bottom: #567694 solid 1px;
+}
+
+.filter-company-text {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (max-width: 700px) {
+    .company-select {
+        justify-content: center;
+    }
+    .filter-company-text {
+        justify-content: center;
+    }
+ }
