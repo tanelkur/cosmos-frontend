@@ -4,6 +4,7 @@ import { BsRocketFill } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FiUser } from "react-icons/fi";
 import { AiOutlineMenu } from "react-icons/ai";
+import { RxCross1 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectShoppingCart } from "../redux/shoppingCartSlice";
@@ -33,13 +34,9 @@ const Header = () => {
 
   const renderUserMenuItem = () => {
     return (
-      <div className="flex-start mr pointer" onClick={() => navigate("/user")}>
-        <p className="small-text">
-          {`Welcome, ${googleFirstName ? googleFirstName : "guest"}`}
-        </p>
-        <p>
-          <FiUser />
-        </p>
+      <div className=" flex-start pointer" onClick={() => navigate("/user")}>
+        <p>{`Welcome, ${googleFirstName ? googleFirstName : "guest"}`}</p>
+        <FiUser />
       </div>
     );
   };
@@ -54,17 +51,22 @@ const Header = () => {
         <h1>Cosmos Odyssey</h1>
       </div>
       <div className="flex-start">
-        <div className="header-desktop-menu header-text">
-          <div className="mr">{renderMenuItem("Home", "")}</div>
-          <div className="mr">
+        <div className="header-desktop-menu ">
+          <div className="header-text mr">{renderMenuItem("Home", "")}</div>
+          <div className="header-text mr">
             {renderMenuItem("Reservations", "reservations")}
           </div>
-          <div className="mr">{renderMenuItem("Help", "help")}</div>
-          {renderUserMenuItem()}
+          <div className="header-text mr">{renderMenuItem("Help", "help")}</div>
+          <div className="header-text" style={{ fontSize: "1.8rem" }}>
+            {renderUserMenuItem()}
+          </div>
         </div>
-        <div className=" mr pointer cart-div" onClick={() => navigate("/cart")}>
+        <div
+          className="header-text mr pointer cart-div"
+          onClick={() => navigate("/cart")}
+        >
           {renderShoppingCartSize()}
-          <p>
+          <p className="ml">
             <RiShoppingCartLine style={{ fontSize: "3rem" }} />
           </p>
         </div>
@@ -79,12 +81,13 @@ const Header = () => {
               mobileMenuOpen ? "show-mobile-menu" : "hide-mobile-menu"
             }`}
           >
+            <RxCross1 className="mobile-x-icon" />
             {renderMenuItem("Home", "")}
             {renderMenuItem("Reservations", "reservations")}
             {renderMenuItem("Help", "help")}
-            {renderUserMenuItem()}
+            <div style={{ fontSize: "3rem" }}>{renderUserMenuItem()}</div>
           </div>
-          <p className="small-text">Menu</p>
+          {/* <p className="small-text">Menu</p> */}
           <AiOutlineMenu style={{ fontSize: "3rem" }} />
         </div>
       </div>

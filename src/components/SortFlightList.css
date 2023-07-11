@@ -1,5 +1,21 @@
+.sort-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .sort-flight-list {
     color: #567694;
     background-color: #fff;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
+    gap: 12rem;
 }
+
+@media (max-width: 700px) {
+    .sort-flight-list {
+        margin-bottom: 8rem;
+        gap: 6rem;
+    } 
+ }

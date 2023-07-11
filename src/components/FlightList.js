@@ -77,32 +77,63 @@ const FlightList = ({ allFlights, origin, destination }) => {
           }}
         >
           <div className="grid4">
-            <div className="flex-start">
-              <div className="column">
-                <div className="day">{startDay}</div>
-                <span className="month-year">
-                  <p>{startMonth}</p>
-                  <p>{startYear}</p>
-                </span>
+            <div>
+              <p
+                className="small-text"
+                style={{
+                  marginBottom: "1rem",
+                }}
+              >
+                Flight start:
+              </p>
+              <div className="flex-start">
+                <div className="column">
+                  <div className="day">{startDay}</div>
+                  <span className="month-year">
+                    <p>{startMonth}</p>
+                    <p>{startYear}</p>
+                  </span>
+                </div>
+                <p className="time">{startTime}</p>
               </div>
-              <p className="time">{startTime}</p>
             </div>
             <div>
+              <p
+                className="small-text"
+                style={{
+                  marginBottom: "1rem",
+                }}
+              >
+                Duration:
+              </p>
               <p style={{ color: "#869db3" }}>
                 {durationDays}d {durationHours}h
               </p>
             </div>
-            <div className="flex-start">
-              <div className="column">
-                <div className="day">{endDay}</div>
-                <span className="month-year">
-                  <p>{endMonth}</p>
-                  <p>{endYear}</p>
-                </span>
+            <div>
+              <p className="small-text" style={{ marginBottom: "1rem" }}>
+                Flight end:
+              </p>
+              <div className="flex-start">
+                <div className="column">
+                  <div className="day">{endDay}</div>
+                  <span className="month-year">
+                    <p>{endMonth}</p>
+                    <p>{endYear}</p>
+                  </span>
+                </div>
+                <p className="time">{endTime}</p>
               </div>
-              <p className="time">{endTime}</p>
             </div>
             <div>
+              <p
+                className="small-text"
+                style={{
+                  marginBottom: "1rem",
+                }}
+              >
+                Price:
+              </p>
               <p style={{ color: "#c3a94b", fontSize: "2.6rem" }}>
                 {priceToDecimal(flight.price)}€
               </p>

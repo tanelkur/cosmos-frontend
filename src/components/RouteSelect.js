@@ -15,6 +15,7 @@ const RouteSelector = ({ allFlights, origin, destination }) => {
   const dropDownClassName = (fromOrTo) => {
     if (fromOrTo === "from") return hiddenFrom ? "hidden" : "visible";
     if (fromOrTo === "to") return hiddenTo ? "hidden" : "visible";
+    return null;
   };
 
   const dropDownMenu = (fromOrTo) => {

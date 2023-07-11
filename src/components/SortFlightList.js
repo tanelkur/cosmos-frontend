@@ -72,42 +72,45 @@ const SortFlightList = () => {
   };
 
   return (
-    <div className="grid4 sort-flight-list">
-      <div
-        className="flex-start column-info pointer"
-        onClick={() => {
-          setSortBy("start");
-          setAscending(!ascending);
-        }}
-      >
-        <p>Start</p> {showIcon("start")}
-      </div>
-      <div
-        className="flex-start column-info pointer"
-        onClick={() => {
-          setSortBy("duration");
-          setAscending(!ascending);
-        }}
-      >
-        <p>Duration</p> {showIcon("duration")}
-      </div>
-      <div
-        className="flex-start column-info pointer"
-        onClick={() => {
-          setSortBy("end");
-          setAscending(!ascending);
-        }}
-      >
-        <p>End</p> {showIcon("end")}
-      </div>
-      <div
-        className="flex-start column-info pointer"
-        onClick={() => {
-          setSortBy("price");
-          setAscending(!ascending);
-        }}
-      >
-        <p>Price</p> {showIcon("price")}
+    <div className="sort-box">
+      <p className="medium-text">Sort flights by:</p>
+      <div className="grid4 sort-flight-list">
+        <div
+          className="flex-start column-info pointer"
+          onClick={() => {
+            setSortBy("start");
+            setAscending(!ascending);
+          }}
+        >
+          <p>Start</p> {showIcon("start")}
+        </div>
+        <div
+          className="flex-start column-info pointer"
+          onClick={() => {
+            setSortBy("duration");
+            setAscending(!ascending);
+          }}
+        >
+          <p>Duration</p> {showIcon("duration")}
+        </div>
+        <div
+          className="flex-start column-info pointer"
+          onClick={() => {
+            setSortBy("end");
+            setAscending(!ascending);
+          }}
+        >
+          <p>End</p> {showIcon("end")}
+        </div>
+        <div
+          className="flex-start column-info pointer"
+          onClick={() => {
+            setSortBy("price");
+            setAscending(!ascending);
+          }}
+        >
+          <p>Price</p> {showIcon("price")}
+        </div>
       </div>
     </div>
   );
