@@ -1,5 +1,8 @@
 .selected-flight {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 50;
     background-color: #e7ebf080;
     height: 100%;
@@ -12,10 +15,7 @@
 .selected-flight--box {
     background-color: #fefcf4;
     max-height: 80rem;
-    max-width: 80rem;
-    margin: 10% auto 2rem auto;
-    top: 50%;
-    left: 50%;  
+    width: 80rem;    
     border-radius: 0.8rem;
 }
 

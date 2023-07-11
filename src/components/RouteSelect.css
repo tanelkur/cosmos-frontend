@@ -5,6 +5,7 @@
 
 .dropdown ul {
     position: absolute;
+    z-index: 1;
 }
 
 .big-number {

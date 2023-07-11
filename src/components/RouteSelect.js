@@ -93,14 +93,14 @@ const RouteSelector = ({ allFlights, origin, destination }) => {
     <div className="">
       <div className="grid2 mb2">
         <div>
-          <div className="flex-start mb">
+          <div className="flex-start mb" style={{ width: "25rem" }}>
             <p className="big-number">01</p>
             <p className="thin-text">Select planet of departure</p>
           </div>
-          <div style={{ zIndex: "1" }}>{dropDownMenu("from")}</div>
+          <div>{dropDownMenu("from")}</div>
         </div>
         <div>
-          <div className="flex-start mb">
+          <div className="flex-start mb" style={{ width: "25rem" }}>
             <p className="big-number">02</p>
             <p className="thin-text">Select planet of arrival</p>
           </div>
