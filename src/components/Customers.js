@@ -48,7 +48,7 @@ const Customers = ({ reservations }) => {
   };
 
   return (
-    <div>
+    <div className="customers-center">
       <p className="medium-text">Latest bookings:</p>
       <ul>{renderCustomers()}</ul>
     </div>

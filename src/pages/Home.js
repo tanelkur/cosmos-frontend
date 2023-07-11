@@ -83,7 +83,7 @@ const Home = () => {
                 origin={origin}
                 destination={destination}
               />
-              <div className="customers">
+              <div className="reservations">
                 <Customers reservations={reservations} />
               </div>
             </div>

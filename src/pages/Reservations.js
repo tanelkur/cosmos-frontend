@@ -25,7 +25,7 @@ const Reserved = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <div className="container ml">
       <Customers reservations={reservations} />
     </div>
   );
