@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import Reservation from "./pages/Cart";
@@ -13,7 +13,7 @@ export const BACKEND_URL = process.env.REACT_APP_SERVER_URL;
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter basename="/">
         <Routes>
           <Route
             path="/"
@@ -24,7 +24,7 @@ function App() {
             }
           />
           <Route
-            path="/#/cart"
+            path="/cart"
             element={
               <Layout>
                 <Reservation />
@@ -32,7 +32,7 @@ function App() {
             }
           />
           <Route
-            path="/#/reservations"
+            path="/reservations"
             element={
               <Layout>
                 <Reserved />
@@ -40,7 +40,7 @@ function App() {
             }
           />
           <Route
-            path="/#/expired"
+            path="/expired"
             element={
               <Layout>
                 <Expired />
@@ -48,7 +48,7 @@ function App() {
             }
           />
           <Route
-            path="/#/help"
+            path="/help"
             element={
               <Layout>
                 <Help />
@@ -56,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="/#/user"
+            path="/user"
             element={
               <Layout>
                 <User />
@@ -64,7 +64,7 @@ function App() {
             }
           />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

@@ -26,7 +26,7 @@ const Header = () => {
 
   const renderMenuItem = (linkName, path) => {
     return (
-      <p className="pointer" onClick={() => navigate(`/#/${path}`)}>
+      <p className="pointer" onClick={() => navigate(`/${path}`)}>
         {linkName}
       </p>
     );
@@ -34,7 +34,7 @@ const Header = () => {
 
   const renderUserMenuItem = () => {
     return (
-      <div className=" flex-start pointer" onClick={() => navigate("/#/user")}>
+      <div className=" flex-start pointer" onClick={() => navigate("/user")}>
         <p>{`Welcome, ${googleFirstName ? googleFirstName : "guest"}`}</p>
         <FiUser />
       </div>
@@ -63,7 +63,7 @@ const Header = () => {
         </div>
         <div
           className="header-text mr pointer cart-div"
-          onClick={() => navigate("/#/cart")}
+          onClick={() => navigate("/cart")}
         >
           {renderShoppingCartSize()}
           <p className="ml">
