@@ -24,7 +24,7 @@ function App() {
             }
           />
           <Route
-            path="/cart"
+            path="/#/cart"
             element={
               <Layout>
                 <Reservation />
@@ -32,7 +32,7 @@ function App() {
             }
           />
           <Route
-            path="/reservations"
+            path="/#/reservations"
             element={
               <Layout>
                 <Reserved />
@@ -40,7 +40,7 @@ function App() {
             }
           />
           <Route
-            path="/expired"
+            path="/#/expired"
             element={
               <Layout>
                 <Expired />
@@ -48,7 +48,7 @@ function App() {
             }
           />
           <Route
-            path="/help"
+            path="/#/help"
             element={
               <Layout>
                 <Help />
@@ -56,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="/user"
+            path="/#/user"
             element={
               <Layout>
                 <User />
