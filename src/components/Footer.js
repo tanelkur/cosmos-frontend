@@ -23,6 +23,19 @@ const Footer = () => {
         <p
           className="pointer small-text ml"
           onClick={() => {
+            navigate("/reservations");
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          Reservations
+        </p>
+        <p
+          className="pointer small-text ml"
+          onClick={() => {
             navigate("/help");
             window.scrollTo({
               top: 0,
