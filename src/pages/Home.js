@@ -87,7 +87,7 @@ const Home = () => {
                 <Customers reservations={reservations} />
               </div>
             </div>
-            <div className="ml">
+            <div className="flight-list-ml">
               <SortFlightList />
               <FlightList
                 allFlights={allFlights}
