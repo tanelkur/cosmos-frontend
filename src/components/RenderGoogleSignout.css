@@ -1,0 +1,9 @@
+.sign-out-text {
+    cursor: pointer;
+    color: #567694;
+    font-size: 1.6rem;
+}
+
+.sign-out-text:hover {
+    color: #0d3b66;
+}

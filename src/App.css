@@ -61,6 +61,7 @@ h1 {
 
 .container-small {
     max-width: 80rem;
+    padding: 0 1rem;
     margin: 0 auto;
 }
 
@@ -136,6 +137,10 @@ h1 {
     transition: 0.4s;
 }
 
+button {
+    font-size: 2rem;
+}
+
 .btn {
     outline: none !important;
     border: none;
@@ -169,6 +174,12 @@ h1 {
 
 .btn-cancel:hover {
     background-color: #cfd8e0;
+}
+
+.btn-logout {
+    background-color: #cfd8e0;
+    width: 14rem;
+    height: 3rem;
 }
 
 .btn-big {

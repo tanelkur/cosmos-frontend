@@ -19,7 +19,8 @@ import { BsArrowRight, BsInfoCircle } from "react-icons/bs";
 import { RxCross1 } from "react-icons/rx";
 import { priceToDecimal } from "../helperFunctions/priceToDecimal";
 import { selectGoogleNames } from "../redux/userSlice";
-import RenderGoogleLogin from "../components/RenderGoogleLogin";
+import RenderGoogleLogin from "../components/RenderGoogleSignin";
+import RenderGoogleSignout from "../components/RenderGoogleSignout";
 
 const Cart = () => {
   let totalPrice = 0,
@@ -42,6 +43,17 @@ const Cart = () => {
     setFirstName(googleFirstName);
     setLastName(googleLastName);
   }, [googleFirstName, googleLastName]);
+
+  const renderGoogle = () => {
+    return googleFirstName ? null : (
+      <div className="google-box ml mt">
+        <p style={{ marginBottom: "1rem" }}>
+          Sign in with Google to fill the form:
+        </p>
+        <RenderGoogleLogin />
+      </div>
+    );
+  };
 
   const renderShoppingCart = () => {
     return shoppingCart.map((item, index) => {
@@ -140,7 +152,7 @@ const Cart = () => {
           onChange={(e) => setLastName(e.target.value)}
         />
         <button type="submit" className="btn btn-primary">
-          Book {`${shoppingCart.length > 1 ? "flights" : "Flight"}`}
+          <p>Book {`${shoppingCart.length > 1 ? "flights" : "Flight"}`}</p>
         </button>
       </form>
     );
@@ -220,10 +232,7 @@ const Cart = () => {
       </div>
       <ul className="mb small-text">{renderShoppingCart()}</ul>
       <div>{renderTotals()}</div>
-      <div className="google-box ml mt">
-        <p>You can use Google Account to fill the form</p>
-        <RenderGoogleLogin />
-      </div>
+      {renderGoogle()}
       <div
         style={{
           transformOrigin: `${clickLocation[0]}px ${clickLocation[1]}px`,

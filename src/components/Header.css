@@ -25,7 +25,7 @@
     left: 5%;
     z-index: 5;
     display: flex;
-    gap: 8rem;
+    gap: 2rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -40,6 +40,15 @@
     transform: scale(1);
 }
 
+.show-mobile-menu p {
+    display: flex;
+    justify-content: center;
+    background-color: #f4d35e;
+    padding: 2.4rem;
+    width: 100%;
+    border-radius: 0.8rem;
+}
+
 .show-mobile-menu p:hover {
     color: #567694;
 }
@@ -48,6 +57,7 @@
 }
 
 .mobile-x-icon {
+    cursor: pointer;
     position: absolute;
     top: 1.4rem;
     right: 1.4rem;
@@ -107,9 +117,16 @@
     display: inline;
 }
 
+.user-icon {
+    font-size: 2.6rem;
+}
+
 @media (max-width: 700px) {
     .header-desktop-menu {
         display: none;
+    }
+    .user-icon {
+        font-size: 4rem;
     }
  }
 

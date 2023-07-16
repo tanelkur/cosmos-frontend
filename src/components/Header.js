@@ -34,10 +34,10 @@ const Header = () => {
 
   const renderUserMenuItem = () => {
     return (
-      <div className=" flex-start pointer" onClick={() => navigate("/user")}>
-        <p>{`Welcome, ${googleFirstName ? googleFirstName : "guest"}`}</p>
-        <FiUser />
-      </div>
+      <p className="flex-start pointer" onClick={() => navigate("/user")}>
+        <span>{`Welcome, ${googleFirstName ? googleFirstName : "guest"}`}</span>
+        <FiUser className="user-icon" />
+      </p>
     );
   };
 
@@ -85,10 +85,10 @@ const Header = () => {
             {renderMenuItem("Home", "")}
             {renderMenuItem("Reservations", "reservations")}
             {renderMenuItem("Help", "help")}
-            <div style={{ fontSize: "3rem" }}>{renderUserMenuItem()}</div>
+            {renderUserMenuItem()}
           </div>
           {/* <p className="small-text">Menu</p> */}
-          <AiOutlineMenu style={{ fontSize: "3rem" }} />
+          <AiOutlineMenu style={{ fontSize: "4rem" }} />
         </div>
       </div>
     </header>

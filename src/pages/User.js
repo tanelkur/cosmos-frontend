@@ -1,12 +1,12 @@
 import React from "react";
-import RenderGoogleLogin from "../components/RenderGoogleLogin";
+import { useSelector } from "react-redux";
+import { selectGoogleNames } from "../redux/userSlice";
+import { googleSigning } from "../helperFunctions/googleSigning";
 
 const User = () => {
-  return (
-    <div className="container-small">
-      <RenderGoogleLogin />
-    </div>
-  );
+  const { googleFirstName, googleLastName } = useSelector(selectGoogleNames);
+
+  return googleSigning(googleFirstName, googleLastName);
 };
 
 export default User;
