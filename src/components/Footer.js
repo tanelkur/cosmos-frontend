@@ -21,7 +21,7 @@ const Footer = () => {
           Home
         </p>
         <p
-          className="pointer small-text ml"
+          className="pointer small-text"
           onClick={() => {
             navigate("/reservations");
             window.scrollTo({
@@ -34,7 +34,7 @@ const Footer = () => {
           Reservations
         </p>
         <p
-          className="pointer small-text ml"
+          className="pointer small-text"
           onClick={() => {
             navigate("/help");
             window.scrollTo({
