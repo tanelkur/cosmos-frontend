@@ -1,6 +1,7 @@
 .header {
     height: 6rem;
     border-bottom: 1px solid #e7ebf0;
+    overflow: hidden;
 }
 
 .header-desktop-menu {
@@ -17,60 +18,77 @@
     justify-content: flex-start;
     gap: 0.5rem;
 }
+ 
+.dark-bg {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0d3b66;
+    opacity: 0.2;
+}
 
-.show-mobile-menu {
+.mobile-menu {
+    display: flex;
+    justify-content: flex-end;
     cursor: context-menu;
     position: fixed;
-    top: 5%;
-    left: 5%;
+    top: 0;
+    right: 0;
     z-index: 5;
+    gap: 2rem;
+    background-color: #0d3b663f;
+    width: 100vw;
+    height: 100vh;
+    font-size: 4rem;
+    transform-origin: right;
+    transition: all 0.5s;
+    transform: translateX(0rem);
+}
+
+.mobile-menu-items {
+    position: fixed;
     display: flex;
+    bottom: 0;
+    width: 70%;
+    height: 100%;
+    padding: 2rem;
     gap: 2rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fcf5da;
-    width: 90vw;
-    height: 90vh;
-    padding: 4rem 0rem 8rem 0rem;
     border-radius: 0.8rem;
-    font-size: 4rem;
-    transform-origin: top right;
-    transition: all 0.5s;
-    transform: scale(1);
+    background-color: #fcf5da;
 }
 
-.show-mobile-menu p {
+.mobile-menu p {
     display: flex;
-    justify-content: center;
     background-color: #f4d35e;
-    padding: 2.4rem;
+    padding: 2.4rem 3.6rem;
     width: 100%;
     border-radius: 0.8rem;
 }
 
-.show-mobile-menu p:hover {
+.mobile-menu p:hover {
     color: #567694;
 }
-.show-mobile-menu div {
+.mobile-menu div {
     margin-top: 3rem;
 }
 
 .mobile-x-icon {
     cursor: pointer;
     position: absolute;
-    top: 1.4rem;
-    right: 1.4rem;
+    top: 2.4rem;
+    right: 2.4rem;
 }
 
-.hide-mobile-menu {
-    position: absolute;
-    top: 5rem;
-    right: 1rem;
-    transform-origin: top right;
+.hide {
+    transform-origin: right;
     transition: all 0.5s;
-    transform: scale(0);
-    display: hidden;
+    transform: translateX(100rem);
+    
 }
 
 .header-icon {

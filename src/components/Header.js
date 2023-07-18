@@ -76,17 +76,16 @@ const Header = () => {
           }}
           className="header-mobile-menu mr pointer"
         >
-          <div
-            className={`${
-              mobileMenuOpen ? "show-mobile-menu" : "hide-mobile-menu"
-            }`}
-          >
-            <RxCross1 className="mobile-x-icon" />
-            {renderMenuItem("Home", "")}
-            {renderMenuItem("Reservations", "reservations")}
-            {renderMenuItem("Help", "help")}
-            {renderUserMenuItem()}
+          <div className={`mobile-menu ${mobileMenuOpen ? "" : "hide"}`}>
+            <div className="mobile-menu-items">
+              <RxCross1 className="mobile-x-icon" />
+              {renderMenuItem("Home", "")}
+              {renderMenuItem("Reservations", "reservations")}
+              {renderMenuItem("Help", "help")}
+              {renderUserMenuItem()}
+            </div>
           </div>
+
           {/* <p className="small-text">Menu</p> */}
           <AiOutlineMenu style={{ fontSize: "4rem" }} />
         </div>
