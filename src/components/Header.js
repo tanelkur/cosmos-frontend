@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import "./Header.css";
 import { BsRocketFill } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { FiUser } from "react-icons/fi";
-import { AiOutlineMenu } from "react-icons/ai";
+import { FiHelpCircle, FiUser } from "react-icons/fi";
+import { AiOutlineMenu, AiOutlineHome } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+import { BiNotepad } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectShoppingCart } from "../redux/shoppingCartSlice";
-import { selectGoogleNames } from "../redux/userSlice";
+import { selectGoogleData } from "../redux/userSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMEnuOpen] = useState(false);
   const shoppingCartSize = useSelector(selectShoppingCart).length;
-  const { googleFirstName } = useSelector(selectGoogleNames);
+  const { googleFirstName, googlePicture } = useSelector(selectGoogleData);
   const renderShoppingCartSize = () => {
     if (shoppingCartSize < 1) return;
     return (
@@ -24,19 +25,32 @@ const Header = () => {
     );
   };
 
-  const renderMenuItem = (linkName, path) => {
+  const renderMenuItem = (linkName, path, iconName) => {
     return (
-      <p className="pointer" onClick={() => navigate(`/${path}`)}>
-        {linkName}
+      <p className="flex-start pointer" onClick={() => navigate(`/${path}`)}>
+        {iconName}
+        <span>{linkName}</span>
       </p>
     );
+  };
+
+  const renderUserIconOrPic = () => {
+    if (googlePicture)
+      return (
+        <img
+          src={googlePicture}
+          alt="Profile picture"
+          className="profile-picture"
+        />
+      );
+    return <FiUser className="mobile-icon" />;
   };
 
   const renderUserMenuItem = () => {
     return (
       <p className="flex-start pointer" onClick={() => navigate("/user")}>
+        {renderUserIconOrPic()}
         <span>{`Welcome, ${googleFirstName ? googleFirstName : "guest"}`}</span>
-        <FiUser className="user-icon" />
       </p>
     );
   };
@@ -79,9 +93,21 @@ const Header = () => {
           <div className={`mobile-menu ${mobileMenuOpen ? "" : "hide"}`}>
             <div className="mobile-menu-items">
               <RxCross1 className="mobile-x-icon" />
-              {renderMenuItem("Home", "")}
-              {renderMenuItem("Reservations", "reservations")}
-              {renderMenuItem("Help", "help")}
+              {renderMenuItem(
+                "Home",
+                "",
+                <AiOutlineHome className="mobile-icon" />
+              )}
+              {renderMenuItem(
+                "Reservations",
+                "reservations",
+                <BiNotepad className="mobile-icon" />
+              )}
+              {renderMenuItem(
+                "Help",
+                "help",
+                <FiHelpCircle className="mobile-icon" />
+              )}
               {renderUserMenuItem()}
             </div>
           </div>

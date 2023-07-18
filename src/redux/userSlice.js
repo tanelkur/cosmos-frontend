@@ -3,21 +3,23 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   googleFirstName: "",
   googleLastName: "",
+  googlePicture: "",
 };
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    SET_GOOGLE_NAMES(state, action) {
+    SET_GOOGLE_DATA(state, action) {
       state.googleFirstName = action.payload.googleFirstName;
       state.googleLastName = action.payload.googleLastName;
+      state.googlePicture = action.payload.googlePicture;
     },
   },
 });
 
-export const { SET_GOOGLE_NAMES } = userSlice.actions;
+export const { SET_GOOGLE_DATA } = userSlice.actions;
 
-export const selectGoogleNames = (state) => state.user;
+export const selectGoogleData = (state) => state.user;
 
 export default userSlice.reducer;

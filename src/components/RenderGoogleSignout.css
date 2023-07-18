@@ -1,4 +1,6 @@
 .sign-out-text {
+    display: flex;
+    justify-content: flex-end;
     cursor: pointer;
     color: #567694;
     font-size: 1.6rem;

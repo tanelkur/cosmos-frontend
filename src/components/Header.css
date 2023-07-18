@@ -26,14 +26,12 @@
     position: fixed;
     top: 0;
     right: 0;
+    background-color: #0d3b662a;
     z-index: 5;
-    gap: 2rem;
-    background-color: #0d3b663f;
     width: 100vw;
     height: 100vh;
-    font-size: 2.4rem;
     transform-origin: right;
-    transition: all 0.5s;
+    transition: all 0.2s;
     transform: translateX(0rem);
 }
 
@@ -43,21 +41,23 @@
     bottom: 0;
     width: 80%;
     height: 100%;
-    padding: 2rem;
-    gap: 2rem;
+    padding-top: 8rem;
+    background-color: #fff;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    border-radius: 0.8rem;
-    background-color: #fcf5da;
 }
 
 .mobile-menu p {
     display: flex;
-    background-color: #f4d35e;
+    border-top: solid 1px #0d3b66;
     padding: 2.4rem 3.6rem;
     width: 100%;
-    border-radius: 0.8rem;
+    font-size: 2.4rem;
+}
+
+.mobile-menu p:last-child {
+    border-bottom: solid 1px #0d3b66;
 }
 
 .mobile-menu p:hover {
@@ -76,7 +76,7 @@
 
 .hide {
     transform-origin: right;
-    transition: all 0.5s;
+    transition: all 0.3s;
     transform: translateX(100rem);
     
 }
@@ -125,7 +125,7 @@
     display: inline;
 }
 
-.user-icon {
+.mobile-icon {
     font-size: 2.4rem;
 }
 
@@ -133,7 +133,7 @@
     .header-desktop-menu {
         display: none;
     }
-    .user-icon {
+    .mobile-icon {
         font-size: 3rem;
     }
  }

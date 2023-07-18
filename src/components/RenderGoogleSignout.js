@@ -1,24 +1,24 @@
 import React from "react";
 import "./RenderGoogleSignout.css";
 import { useDispatch } from "react-redux";
-import { SET_GOOGLE_NAMES } from "../redux/userSlice";
+import { SET_GOOGLE_DATA } from "../redux/userSlice";
 
 const RenderGoogleLogout = () => {
   const dispatch = useDispatch();
 
   return (
     <div
-      className="mb mt flex-start"
+      className="mb mt flex-center"
       onClick={() => {
         dispatch(
-          SET_GOOGLE_NAMES({
+          SET_GOOGLE_DATA({
             googleFirstName: "",
             googleLastName: "",
           })
         );
       }}
     >
-      <p className="sign-out-text ml2">Sign out</p>
+      <p className="sign-out-text">Sign out</p>
     </div>
   );
 };

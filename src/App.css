@@ -239,6 +239,12 @@ button {
 
 .pointer {
     cursor: pointer;
+} 
+
+.profile-picture {
+    border-radius: 50%;
+    height: 2.8rem;
+    width: 2.8rem;
 }
 
 .scroll-top {

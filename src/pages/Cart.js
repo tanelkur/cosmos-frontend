@@ -18,9 +18,8 @@ import {
 import { BsArrowRight, BsInfoCircle } from "react-icons/bs";
 import { RxCross1 } from "react-icons/rx";
 import { priceToDecimal } from "../helperFunctions/priceToDecimal";
-import { selectGoogleNames } from "../redux/userSlice";
+import { selectGoogleData } from "../redux/userSlice";
 import RenderGoogleLogin from "../components/RenderGoogleSignin";
-import RenderGoogleSignout from "../components/RenderGoogleSignout";
 
 const Cart = () => {
   let totalPrice = 0,
@@ -31,7 +30,7 @@ const Cart = () => {
   const selectedFlight = useSelector(selectSelectedFlight);
   const shoppingCart = useSelector(selectShoppingCart);
   const { _id: flightMongoId, reservations } = useSelector(selectAllFlights);
-  const { googleFirstName, googleLastName } = useSelector(selectGoogleNames);
+  const { googleFirstName, googleLastName } = useSelector(selectGoogleData);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [hidden, setHidden] = useState(true);

@@ -4,8 +4,8 @@ import RenderGoogleLogin from "../components/RenderGoogleSignin";
 export const googleSigning = (googleFirstName, googleLastName) => {
   return googleFirstName ? (
     <div className="container-small">
-      <p>
-        You are logged in as <b>{googleFirstName}</b> <b>{googleLastName}</b>
+      <p className="ml">
+        You are signed in as <b>{googleFirstName}</b> <b>{googleLastName}</b>
       </p>
       <RenderGoogleSignout />
     </div>
