@@ -20,10 +20,12 @@ import {
   selectReservations,
 } from "../redux/reservationsSlice";
 import { BsBoxArrowInUp } from "react-icons/bs";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingFlights, setIsLoadingFlights] = useState(false);
+  const [isLoadingReservations, setIsLoadingReservations] = useState(false);
 
   const allFlights = useSelector(selectAllFlights);
   const origin = useSelector(selectOrigin);
@@ -34,27 +36,30 @@ const Home = () => {
   const dateNow = Date.now();
 
   useEffect(() => {
-    const getData = async () => {
+    const getReservations = async () => {
       try {
-        setIsLoading(true);
-        const { data } = await axios.get(`${BACKEND_URL}/api/pricelist`);
-        dispatch(SET_ALL_FLIGHTS(data));
-        setIsLoading(false);
+        setIsLoadingReservations(true);
+        const { data } = await axios.get(`${BACKEND_URL}/api/reservations`);
+        dispatch(SET_RESERVATIONS(data));
+        setIsLoadingReservations(false);
       } catch (error) {
         console.log(error);
       }
     };
 
-    const getReservations = async () => {
+    const getFlightsData = async () => {
       try {
-        const { data } = await axios.get(`${BACKEND_URL}/api/reservations`);
-        dispatch(SET_RESERVATIONS(data));
+        setIsLoadingFlights(true);
+        const { data } = await axios.get(`${BACKEND_URL}/api/pricelist`);
+        dispatch(SET_ALL_FLIGHTS(data));
+        setIsLoadingFlights(false);
       } catch (error) {
         console.log(error);
       }
     };
+
     getReservations();
-    getData();
+    getFlightsData();
   }, [dispatch]);
 
   useTimer(validUntil - dateNow);
@@ -86,16 +91,24 @@ const Home = () => {
                 destination={destination}
               />
               <div className="reservations">
-                <Customers reservations={reservations} />
+                {isLoadingReservations ? (
+                  <LoadingSpinner />
+                ) : (
+                  <Customers reservations={reservations} />
+                )}
               </div>
             </div>
             <div className="flight-list-ml">
               <SortFlightList />
-              <FlightList
-                allFlights={allFlights}
-                origin={origin}
-                destination={destination}
-              />
+              {isLoadingFlights ? (
+                <LoadingSpinner />
+              ) : (
+                <FlightList
+                  allFlights={allFlights}
+                  origin={origin}
+                  destination={destination}
+                />
+              )}
             </div>
           </div>
         </div>

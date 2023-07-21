@@ -8,7 +8,7 @@ import {
 import axios from "axios";
 import { BACKEND_URL } from "../App";
 
-const Reserved = () => {
+const Reservations = () => {
   const dispatch = useDispatch();
   const reservations = useSelector(selectReservations);
   useEffect(() => {
@@ -20,7 +20,6 @@ const Reserved = () => {
         console.log(error);
       }
     };
-
     getReservations();
   }, [dispatch]);
 
@@ -31,4 +30,4 @@ const Reserved = () => {
   );
 };
 
-export default Reserved;
+export default Reservations;
