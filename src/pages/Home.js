@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -23,6 +23,7 @@ import { BsBoxArrowInUp } from "react-icons/bs";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
 
   const allFlights = useSelector(selectAllFlights);
   const origin = useSelector(selectOrigin);
@@ -35,8 +36,10 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
+        setIsLoading(true);
         const { data } = await axios.get(`${BACKEND_URL}/api/pricelist`);
         dispatch(SET_ALL_FLIGHTS(data));
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -50,9 +53,8 @@ const Home = () => {
         console.log(error);
       }
     };
-
-    getData();
     getReservations();
+    getData();
   }, [dispatch]);
 
   useTimer(validUntil - dateNow);
