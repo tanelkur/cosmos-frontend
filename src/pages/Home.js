@@ -50,10 +50,7 @@ const Home = () => {
     const getFlightsData = async () => {
       try {
         setIsLoadingFlights(true);
-        //  const { data } = await axios.get(`${BACKEND_URL}/api/pricelist`); // PRICELIST FROM DATABASE
-        const { data } = await axios.get(
-          `https://cosmos-odyssey.azurewebsites.net/api/v1.0/TravelPrices`
-        ); // PRICELIST FROM API DIRECTLY
+        const { data } = await axios.get(`${BACKEND_URL}/api/pricelist`);
         dispatch(SET_ALL_FLIGHTS(data));
         setIsLoadingFlights(false);
       } catch (error) {
