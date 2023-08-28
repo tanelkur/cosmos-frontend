@@ -36,6 +36,17 @@ const Home = () => {
   const dateNow = Date.now();
 
   useEffect(() => {
+    const getCurrentPricelist = async () => {
+      try {
+        setIsLoadingFlights(true);
+        const { data } = await axios.get(`${BACKEND_URL}/api/currentPricelist`);
+        dispatch(SET_ALL_FLIGHTS(data));
+        setIsLoadingFlights(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     const getReservations = async () => {
       try {
         setIsLoadingReservations(true);
@@ -49,17 +60,18 @@ const Home = () => {
 
     const getFlightsData = async () => {
       try {
-        setIsLoadingFlights(true);
+        // setIsLoadingFlights(true);
         const { data } = await axios.get(`${BACKEND_URL}/api/pricelist`);
         dispatch(SET_ALL_FLIGHTS(data));
-        setIsLoadingFlights(false);
+        // setIsLoadingFlights(false);
       } catch (error) {
         console.log(error);
       }
     };
 
-    getReservations();
+    getCurrentPricelist();
     getFlightsData();
+    getReservations();
   }, [dispatch]);
 
   useTimer(validUntil - dateNow);
