@@ -39,8 +39,7 @@ const Home = () => {
     const getCurrentPricelist = async () => {
       try {
         setIsLoadingFlights(true);
-        const { data } = await axios.get(`${BACKEND_URL}/api/currentPricelist`);
-        console.log(data);
+        const { data } = await axios.get(`${BACKEND_URL}/api/currentpricelist`);
 
         dispatch(SET_ALL_FLIGHTS(data));
         setIsLoadingFlights(false);
