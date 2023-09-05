@@ -40,6 +40,8 @@ const Home = () => {
       try {
         setIsLoadingFlights(true);
         const { data } = await axios.get(`${BACKEND_URL}/api/currentPricelist`);
+        console.log(data);
+
         dispatch(SET_ALL_FLIGHTS(data));
         setIsLoadingFlights(false);
       } catch (error) {
@@ -63,6 +65,7 @@ const Home = () => {
         // setIsLoadingFlights(true);
         const { data } = await axios.get(`${BACKEND_URL}/api/pricelist`);
         dispatch(SET_ALL_FLIGHTS(data));
+
         // setIsLoadingFlights(false);
       } catch (error) {
         console.log(error);
