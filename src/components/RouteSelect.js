@@ -95,7 +95,7 @@ const RouteSelector = ({ allFlights, origin, destination }) => {
         <div>
           <div className="flex-start mb" style={{ width: "25rem" }}>
             <p className="big-number">01</p>
-            <p className="thin-text" style={{ color: "red" }}>API website is down at the moment. App can not fetch data.</p>
+            <p className="thin-text" >Select planet of origin</p>
           </div>
           <div>{dropDownMenu("from")}</div>
         </div>
